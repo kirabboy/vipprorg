@@ -1,0 +1,93 @@
+@import "compass/css3";
+
+$darkcolor: #1f2933;
+$frame-padding: 5px;
+
+body {
+  padding: 2em;
+  background-color: hsl(hue($darkcolor),30,95);
+  font: normal 100%/1.5 helvetica, arial, sans-serif ;
+}
+
+.media-image {
+  display: inline-block;
+  width: auto;
+  
+  img {
+    display: block;
+  }
+  
+  &:hover {
+      
+    .label {
+      padding-left: 1em;
+    }
+      
+  }
+  
+}
+
+.image-frame {
+	position: relative;
+	padding: $frame-padding;
+	background-color: #FFF;
+	@include box-shadow(0 1px 2px rgba($darkcolor,.5));
+
+	&:after {
+		content: '';
+		display: block;
+		position: absolute;
+		top: $frame-padding;
+		right: $frame-padding;
+		bottom: $frame-padding;
+		left: $frame-padding;
+		@include box-shadow(0 0 30px rgba($darkcolor,.25) inset);
+		z-index: 10;
+	}
+
+}
+
+.label {
+  position: absolute;
+  top: $frame-padding *-1;
+  left: $frame-padding *-1;
+  display: inline-block;
+  padding: 0 0.75em;
+  border-radius: 5px 2px 2px 0;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  font-size: 12px;
+  font-size: 0.75rem;
+  line-height: 2.35em;
+  font-weight: bold;
+  color: #6b4e00;
+  background-color: #ffc938;
+  z-index: 11;
+  @include border-radius(5px 2px 2px 0);
+  @include box-shadow(0px 2px 0 rgba($darkcolor,.1));
+  @include transition(all 0.1s);
+  
+	&:before {
+		content: " ";
+		display: block;
+		position: absolute;
+		width: 5px;
+		height: 4px;
+		left: 0;
+		bottom: -4px;
+    background-color: #ffc938;
+	}
+
+	&:after {
+		content: " ";
+		display: block;
+		position: absolute;
+		width: 5px;
+		height: 6px;
+		bottom: -6px;
+		left: 0;
+    background-color: #9e7300;
+		@include border-radius(5px 0 0 5px);
+	}
+  
+}
